@@ -7,7 +7,6 @@ import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
 class BaseApplication: Application() {
-
     //BaseApplication
     override fun attachBaseContext(base: Context) {
         super.attachBaseContext(base)
