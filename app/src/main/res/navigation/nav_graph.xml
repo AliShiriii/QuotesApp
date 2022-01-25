@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/quotes">
+    app:startDestination="@+id/quotes">
 
     <fragment
         android:id="@+id/quotes"

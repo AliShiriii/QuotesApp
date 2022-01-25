@@ -1,6 +1,7 @@
 package com.example.quotesapp.api
 
 import com.example.quotesapp.model.QuotesResponse
+import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.GET
 
@@ -12,5 +13,5 @@ interface QuotesApi {
     }
 
     @GET("api/quotes")
-    fun callQuotes(): Response<List<QuotesResponse>>
+    fun callQuotes(): List<QuotesResponse>
 }

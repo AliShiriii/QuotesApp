@@ -8,31 +8,24 @@ import com.example.quotesapp.model.QuotesResponse
 import com.example.quotesapp.repository.QuotesRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import retrofit2.Response
 import javax.inject.Inject
 
 @HiltViewModel
 class QuotesViewModel @Inject constructor(private val quotesRepository: QuotesRepository) :
     ViewModel() {
 
-    private val _quotes = MutableLiveData<Response<List<QuotesResponse>>>()
-    val quotes: LiveData<Response<List<QuotesResponse>>>
+    private val _quotes = MutableLiveData<List<QuotesResponse>>()
+    val quotes: LiveData<List<QuotesResponse>>
         get() = _quotes
-
-    init {
-
-        callQuotes()
-
-    }
 
     fun callQuotes() {
 
         viewModelScope.launch {
             val response = quotesRepository.callQuotes()
 
-            _quotes.value = response
-        }
+            _quotes.postValue(response)
 
+        }
 
     }
 }
