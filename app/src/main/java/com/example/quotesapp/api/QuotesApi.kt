@@ -1,5 +1,9 @@
 package com.example.quotesapp.api
 
+import com.example.quotesapp.model.QuotesResponse
+import retrofit2.Response
+import retrofit2.http.GET
+
 interface QuotesApi {
 
     companion object{
@@ -7,5 +11,6 @@ interface QuotesApi {
         const val BASE_URL = "https://type.fit/"
     }
 
-    fun getAll()
+    @GET("api/quotes")
+    fun callQuotes(): Response<List<QuotesResponse>>
 }
